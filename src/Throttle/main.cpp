@@ -86,7 +86,7 @@ void schiebhebel()
   int16_t mappedThrottle = map(throttleValue, 0, 4095, -32767, 32767); // Throttle Achse
   bleGamepad.setSlider1(mappedThrottle);                               // Linker Trigger = Gashebel
   Serial.print("Throttle ADC: ");
-  Serial.print(throttleValue); // Serielle Ausgabe für Debugging
+  Serial.print(throttleValue);                                         // Serielle Ausgabe für Debugging
   Serial.print(" → Mapped: ");
-  Serial.println(mappedThrottle); // Serielle Ausgabe für Debugging
+  Serial.println(mappedThrottle);                                      // Serielle Ausgabe für Debugging
 }
