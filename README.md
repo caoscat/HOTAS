@@ -33,7 +33,10 @@ HOTAS/
 ├── lib/          # Libraries
 └── platformio.ini # Project configuration
 ```
+## Dependency 
+
+- [ESP32-BLE-Gamepad](https://github.com/lemmingDev/ESP32-BLE-Gamepad)
 
 ## License
 
-use my code in this however you want i don't realy care
+Use my code in this however you want i don't realy care
