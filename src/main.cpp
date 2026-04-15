@@ -10,11 +10,7 @@ const int throttlePin = 26; // Mittelpin Schieberegler
 int throttleValue = 0;
 
 const int ButtonArray[9] = {12,25,34,39,36,4,5,19,21}; 
-// Joystick Pins (falls analog benötigt, sonst nur virtuell)
-//const int joy1X = A0; // optional
-//const int joy1Y = A1;
-//const int joy2X = A2;
-//const int joy2Y = A3;
+
 
 void setup() {
   Serial.begin(9600);
