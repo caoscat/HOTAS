@@ -12,6 +12,11 @@ This project implements firmware for HOTAS control systems, providing interface 
 - Input handling and calibration
 - Communication protocol support
 
+## Hardware 
+- [ESP32](https://www.adafruit.com/product/5400)
+- 10KOhm slide potentiometer
+- Buttons or switches 
+
 ## Getting Started
 
 1. Install [PlatformIO](https://platformio.org/)
@@ -31,4 +36,4 @@ HOTAS/
 
 ## License
 
-See LICENSE file for details.
+use my code in this however you want i don't realy care
