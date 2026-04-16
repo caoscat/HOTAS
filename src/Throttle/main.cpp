@@ -6,11 +6,12 @@ BleGamepad bleGamepad("ESP32 HOTAS", "MoWa", 100);
 void schiebhebel();
 
 // Potentiometer für Gashebel
-const int throttlePin = 26; // Mittelpin Schieberegler
+const int throttlePin = 21; // Mittelpin Schieberegler
+const int NonePulldownPin = 26;
 int throttleValue = 0;
 
 // Button Pins
-const int ButtonArray[9] = {12, 25, 34, 39, 36, 4, 5, 19, 21};
+const int ButtonArray[8] = {25, 34, 39, 36, 4, 5, 19, 12};
 
 void setup()
 {
@@ -22,9 +23,9 @@ void setup()
   analogReadResolution(12);
 
   // Pins konfigurieren
+  pinMode(NonePulldownPin, INPUT_PULLDOWN); 
   pinMode(throttlePin, INPUT);
-  pinMode(ButtonArray[0], INPUT_PULLDOWN);
-  for (int i = 1; i < 9; i++)
+  for (int i = 0; i < 8; i++)
   {
     pinMode(ButtonArray[i], INPUT);
   }
@@ -57,19 +58,10 @@ void loop()
   }
 
   // --- Buttons ---
-  if (digitalRead(ButtonArray[0]) == HIGH)
-  {                      // Button gedrückt (aktiver LOW)
-    bleGamepad.press(1); // Button 1 drücken
-  }
-  else
-  {
-    bleGamepad.release(1); // Button 1 loslassen
-  }
-
-  for (int i = 1; i < 9; i++)
+  for (int i = 0; i < 8; i++)
   { // Buttons 2–9
     if (digitalRead(ButtonArray[i]) == HIGH)
-    {                          // Button gedrückt (aktiver LOW)
+    {                          
       bleGamepad.press(i + 1); // Button i+1 drücken
     }
     else
