@@ -6,12 +6,12 @@ BleGamepad bleGamepad("ESP32 HOTAS", "MoWa", 100);
 void schiebhebel();
 
 // Potentiometer für Gashebel
-const int throttlePin = 21; // Mittelpin Schieberegler
-const int NonePulldownPin = 26;
+const int throttlePin = 26; // Mittelpin Schieberegler 
+const int NonePulldownPin = 12;
 int throttleValue = 0;
 
 // Button Pins
-const int ButtonArray[8] = {25, 34, 39, 36, 4, 5, 19, 12};
+const int ButtonArray[8] = {25, 34, 39, 36, 4, 5, 19, 21};
 
 void setup()
 {
